@@ -1,0 +1,24 @@
+<!DOCTYPE HTML>
+<html lang='en'>
+  <head>
+    <!--Game logic-->
+    <script src="{{ url_for('static', filename='game.js') }}"></script>
+
+    <!--original source of checkerboard styling: https://gist.github.com/mjumbewu/1176d7c31734f493ab391441149ae750-->
+    <link type='text/css' rel='stylesheet' href='{{  url_for("static", filename="game.css") }}'/>
+  </head>
+  <body>
+    <!--Boards are rendered client-side-->
+    <div id="checker-board"></div>
+    <h3 id="victory-banner">Please wait while the other player joins. Red will go first.</h3>
+    <div id="timebox">
+      {% for team in ["red", "black"] %}
+        <div>
+          <div id="{{team}}box" class="{{team}} square"></div>
+          <b id="{{team}}clock"></b>
+          <b id="{{team}}label"></b>
+        </div>
+      {%endfor%}
+    </div>
+  </body>
+</html>
