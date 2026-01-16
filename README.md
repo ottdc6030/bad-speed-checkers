@@ -1,5 +1,5 @@
 
-# Project Title
+# Bad Speed Checkers
 
 This project consists of two major services
 
